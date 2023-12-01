@@ -101,9 +101,9 @@ export default function AddOwner({
 
         <View style={{ height: 20 }}></View>
         {/* <Link href={{ pathname: "Perference" }} asChild> */}
-        <Pressable>
+        <TouchableOpacity onPress={() => navigation.navigate("Perference")}>
           <PrimaryButton title="Don't have a dog" />
-        </Pressable>
+        </TouchableOpacity>
         {/* </Link> */}
       </ScrollView>
       <Image
