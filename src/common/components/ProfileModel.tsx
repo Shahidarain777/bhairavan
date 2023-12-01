@@ -1,13 +1,14 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { Modal, Pressable, Text, TouchableOpacity, View } from "react-native";
 import colors from "../../res/colors";
-
+import { useNavigation } from "@react-navigation/native";
 interface Props {
   visible: boolean;
   onCancel(): void;
 }
 
 export default function ProfileModal({ visible, onCancel }: Props) {
+  const navigation=useNavigation();
   const Row = ({ text, icon }: any) => (
     <View
       style={{
@@ -69,26 +70,22 @@ export default function ProfileModal({ visible, onCancel }: Props) {
             borderWidth: 4,
           }}
         >
-          {/* <Link href="ProfileSetting" asChild> */}
-          <Pressable onPress={onCancel}>
+          
+          <TouchableOpacity onPress={()=>{onCancel();navigation.navigate('ProfileSetting')}}>
             <Row icon={"user-circle-o"} text={"Profile Settings"} />
-          </Pressable>
-          {/* </Link> */}
-          {/* <Link href="ChangePassword" asChild> */}
-          <Pressable onPress={onCancel}>
+          </TouchableOpacity>
+          
+         
+          <TouchableOpacity onPress={()=>{onCancel();navigation.navigate('ChangePassword')}}>
             <Row icon={"lock"} text={"Change Password"} />
-          </Pressable>
-          {/* </Link> */}
-          {/* <Link href="Login" replace asChild> */}
-          <Pressable
-            onPress={() => {
-              onCancel();
-              // router.replace("/");
-            }}
-          >
+          </TouchableOpacity>
+        
+         
+          <TouchableOpacity  onPress={()=>{onCancel();navigation.navigate('LogOut')}}>
+            
             <Row icon={"power-off"} text={"Logout"} />
-          </Pressable>
-          {/* </Link> */}
+          </TouchableOpacity>
+         
         </View>
       </View>
     </Modal>

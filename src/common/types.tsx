@@ -30,6 +30,11 @@ export type RootStackParamList = {
   ForgotPassword:undefined;
   VerifyForgotOTP:undefined;
   NewPassword:undefined;
+  ProfileSetting:undefined;
+  ProfileModel:undefined;
+  ChangePassword:undefined;
+  LogOut:undefined;
+  Setting:undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =

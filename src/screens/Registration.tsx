@@ -123,7 +123,7 @@ export default function Registration({
               <Text style={styles.terms}>Terms of Service</Text>
             </TouchableOpacity>
             <Text style={styles.of}> of </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Setting")}>
               <Text style={styles.terms}>Privacy policy</Text>
             </TouchableOpacity>
           </View>
