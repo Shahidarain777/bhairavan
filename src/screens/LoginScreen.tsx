@@ -99,11 +99,9 @@ export default function Login() {
           {/* </Link> */}
         </View>
         <View style={{ height: 38 }}></View>
-        {/* <Link href="(tabs)" asChild> */}
-        <Pressable>
+        <TouchableOpacity onPress={() => navigation.navigate("Root")}>
           <PrimaryButton title="Login" />
-        </Pressable>
-        {/* </Link> */}
+        </TouchableOpacity>
         <View
           style={{
             flexDirection: "row",

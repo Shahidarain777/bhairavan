@@ -17,6 +17,7 @@ import Registration from "../../screens/Registration";
 import Otp from "../../screens/Otp";
 import AddOwner from "../../screens/AddOwner";
 import AddPicture from "../../screens/AddPicture";
+import DrawerMenu from "../components/DrawerMenu";
 export default function Navigation({
   colorScheme,
 }: {
@@ -103,7 +104,7 @@ function DrawerNavigator() {
         },
         headerShown: false,
       }}
-      drawerContent={({ navigation }) => <View></View>}
+      drawerContent={({ navigation }) => <DrawerMenu />}
     >
       <Drawer.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
     </Drawer.Navigator>
