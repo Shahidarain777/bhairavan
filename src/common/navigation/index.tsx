@@ -25,6 +25,11 @@ import NotificationServicesSettings from "../../screens/NotificationServicesSett
 import ForgotPassword from "../../screens/ForgotPassword";
 import VerifyForgotOTP from "../../screens/VerifyForgotOTP";
 import NewPassword from "../../screens/NewPassword";
+import ProfileSetting from "../../screens/ProfileSetting";
+import ProfileModel from "../components/ProfileModel";
+import ChangePassword from "../../screens/ChangePassword";
+import LogOut from "../../screens/LogOut";
+import Setting from "../../screens/Setting";
 export default function Navigation({
   colorScheme,
 }: {
@@ -121,6 +126,29 @@ const RootNavigator = React.memo(function ({
         component={DrawerNavigator}
         options={{ headerShown: false }}
       />
+        <Stack.Screen
+        name="ProfileSetting"
+        component={ProfileSetting}
+        options={{ headerShown: false }}
+      />
+       
+       <Stack.Screen
+        name="ChangePassword"
+        component={ChangePassword}
+        options={{ headerShown: false }}
+      />
+       <Stack.Screen
+        name="LogOut"
+        component={LogOut}
+        options={{ headerShown: false }}
+      />
+         <Stack.Screen
+        name="Setting"
+        component={Setting}
+        options={{ headerShown: false }}
+      />
+
+
 
       <Stack.Screen
         name="NotFound"
@@ -128,6 +156,8 @@ const RootNavigator = React.memo(function ({
         options={{ title: "Oops!" }}
       />
     </Stack.Navigator>
+
+    
   );
 });
 
