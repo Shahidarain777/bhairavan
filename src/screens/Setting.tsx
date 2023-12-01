@@ -9,10 +9,9 @@ import {
 } from "react-native";
 import colors from "../res/colors";
 import { RootStackScreenProps } from "../common/types";
-import navigation from "../common/navigation";
 
 export default function Setting({
-  
+  navigation
 }: RootStackScreenProps<"Setting">) {
   return (
     <View style={{ flex: 1 }}>
