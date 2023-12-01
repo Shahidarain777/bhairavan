@@ -1,9 +1,13 @@
-import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
+import { View, Text, StyleSheet, Pressable, ScrollView, TouchableOpacity } from "react-native";
 
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import PrimaryButton from "../common/components/PrimaryButton";
 import colors from "../res/colors";
-export default function AddPicture() {
+import navigation from "../common/navigation";
+import { RootStackScreenProps } from "../common/types";
+export default function AddPicture({
+  navigation,
+}: RootStackScreenProps<"AddPicture">) {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -72,11 +76,11 @@ export default function AddPicture() {
         </View>
 
         <View style={{ height: 20, marginTop: 40 }}></View>
-        {/* <Link href={{ pathname: "AddGender" }} asChild> */}
-        <Pressable>
+
+        <TouchableOpacity onPress={() => navigation.navigate("AddGender")}>
           <PrimaryButton title="Next" />
-        </Pressable>
-        {/* </Link> */}
+        </TouchableOpacity>
+        
       </ScrollView>
     </View>
   );

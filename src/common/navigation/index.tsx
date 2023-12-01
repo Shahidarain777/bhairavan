@@ -18,6 +18,13 @@ import Otp from "../../screens/Otp";
 import AddOwner from "../../screens/AddOwner";
 import AddPicture from "../../screens/AddPicture";
 import DrawerMenu from "../components/DrawerMenu";
+import AddGender from "../../screens/AddGender";
+import DogAge from "../../screens/DogAge";
+import Perference from "../../screens/Perference";
+import NotificationServicesSettings from "../../screens/NotificationServicesSettings";
+import ForgotPassword from "../../screens/ForgotPassword";
+import VerifyForgotOTP from "../../screens/VerifyForgotOTP";
+import NewPassword from "../../screens/NewPassword";
 export default function Navigation({
   colorScheme,
 }: {
@@ -71,6 +78,41 @@ const RootNavigator = React.memo(function ({
       <Stack.Screen
         name="AddPicture"
         component={AddPicture}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="AddGender"
+        component={AddGender}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="DogAge"
+        component={DogAge}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Perference"
+        component={Perference}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="NotificationServicesSettings"
+        component={NotificationServicesSettings}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ForgotPassword"
+        component={ForgotPassword}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="VerifyForgotOTP"
+        component={VerifyForgotOTP}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="NewPassword"
+        component={NewPassword}
         options={{ headerShown: false }}
       />
 

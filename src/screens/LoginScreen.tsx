@@ -83,8 +83,8 @@ export default function Login() {
               size={20}
             />
           </View>
-          {/* <Link href={{ pathname: "ForgotPassword" }} asChild> */}
-          <Pressable>
+        
+          <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
             <Text
               style={{
                 textAlign: "right",
@@ -95,8 +95,8 @@ export default function Login() {
             >
               Forgot password?
             </Text>
-          </Pressable>
-          {/* </Link> */}
+          </TouchableOpacity>
+         
         </View>
         <View style={{ height: 38 }}></View>
         <TouchableOpacity onPress={() => navigation.navigate("Root")}>

@@ -23,6 +23,13 @@ export type RootStackParamList = {
   Otp: undefined;
   AddOwner: undefined;
   AddPicture: undefined;
+  AddGender:undefined;
+  DogAge:undefined;
+  Perference:undefined;
+  NotificationServicesSettings:undefined;
+  ForgotPassword:undefined;
+  VerifyForgotOTP:undefined;
+  NewPassword:undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
