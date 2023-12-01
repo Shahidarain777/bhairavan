@@ -23,7 +23,7 @@ export default function AddOwner({
             width: 100,
             alignSelf: "flex-end",
             position: "absolute",
-            top: 150,
+            top: 160,
           }}
           source={require("../res/images/pngs/footprint_small.png")}
         />
@@ -101,8 +101,10 @@ export default function AddOwner({
 
         <View style={{ height: 20 }}></View>
         {/* <Link href={{ pathname: "Perference" }} asChild> */}
-        <TouchableOpacity onPress={() => navigation.navigate("Perference")}>
-          <PrimaryButton title="Don't have a dog" />
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Perference", { value: "nodog" })}
+        >
+          <PrimaryButton title="Don't have a dog?" />
         </TouchableOpacity>
         {/* </Link> */}
       </ScrollView>

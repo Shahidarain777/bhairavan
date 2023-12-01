@@ -11,9 +11,16 @@ import {
 import PrimaryButton from "../common/components/PrimaryButton";
 import colors from "../res/colors";
 import { RootStackScreenProps } from "../common/types";
+import { useState } from "react";
 export default function Perference({
   navigation,
+  route,
 }: RootStackScreenProps<"Perference">) {
+  const screen = route?.params?.value;
+  console.log(screen);
+  const [selected, setSelected] = useState(
+    route?.params?.value == "nodog" ? "Play" : ""
+  );
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -27,17 +34,20 @@ export default function Perference({
             textAlign: "center",
           }}
         >
-          Perference
+          Preference
         </Text>
 
         <View style={{ flexDirection: "row", marginTop: 50 }}>
           <TouchableOpacity
+            onPress={() => setSelected("Play")}
             style={{
               height: 150,
               width: 140,
               borderRadius: 15,
               marginHorizontal: 15,
               borderWidth: 1,
+              backgroundColor:
+                selected == "Play" ? colors["yellow.500"] : "transparent",
             }}
           >
             <Image
@@ -46,12 +56,16 @@ export default function Perference({
             />
           </TouchableOpacity>
           <TouchableOpacity
+            disabled={screen == "nodog" ? true : false}
+            onPress={() => setSelected("Mate")}
             style={{
               height: 150,
               width: 140,
               borderRadius: 15,
               marginHorizontal: 15,
               borderWidth: 1,
+              backgroundColor:
+                selected == "Mate" ? colors["yellow.500"] : "transparent",
             }}
           >
             <Image
@@ -63,26 +77,38 @@ export default function Perference({
 
         <View style={{ flexDirection: "row", marginTop: 70 }}>
           <TouchableOpacity
+            disabled={screen == "nodog" ? true : false}
+            onPress={() => setSelected("Missing")}
             style={{
               height: 150,
               width: 140,
               borderRadius: 15,
               marginHorizontal: 15,
               borderWidth: 1,
+              backgroundColor:
+                selected == "Missing" ? colors["yellow.500"] : "transparent",
             }}
           >
             <Image
-              style={{ marginTop: 10, height: 150, width: 130 }}
+              style={{
+                marginTop: 10,
+                height: 150,
+                width: 130,
+              }}
               source={require("../res/images/pngs/Missing.png")}
             />
           </TouchableOpacity>
           <TouchableOpacity
+            disabled={screen == "nodog" ? true : false}
+            onPress={() => setSelected("Adopt")}
             style={{
               height: 150,
               width: 140,
               borderRadius: 15,
               marginHorizontal: 15,
               borderWidth: 1,
+              backgroundColor:
+                selected == "Adopt" ? colors["yellow.500"] : "transparent",
             }}
           >
             <Image
@@ -92,15 +118,15 @@ export default function Perference({
           </TouchableOpacity>
         </View>
 
-        <View style={{height:70}}></View>
-       
-          <TouchableOpacity  onPress={() => navigation.navigate("NotificationServicesSettings")}>
-            <PrimaryButton title="Next" />
-          </TouchableOpacity>
-       
+        <View style={{ height: 70 }}></View>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate("NotificationServicesSettings")}
+        >
+          <PrimaryButton title="Next" />
+        </TouchableOpacity>
       </ScrollView>
     </View>
-    
   );
 }
 

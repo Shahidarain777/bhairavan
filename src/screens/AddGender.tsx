@@ -22,7 +22,8 @@ export default function AddGender({
             fontSize: 24,
             color: colors["brown.900"],
             fontWeight: "600",
-            marginTop: 120,
+            marginTop: 80,
+            fontFamily: "Unbounded",
           }}
         >
           How old is your dog?
@@ -36,9 +37,10 @@ export default function AddGender({
             color: colors["brown.900"],
             fontWeight: "600",
             marginTop: 20,
+            fontFamily: "Unbounded",
           }}
         >
-          Depending on the age,we will advise the best individual plan for
+          Depending on the age, we wil advise the best individual plan for
           traning and walking activities
         </Text>
 
@@ -114,11 +116,9 @@ export default function AddGender({
           </Text>
         </View>
 
-      
-          <TouchableOpacity  onPress={() => navigation.navigate("DogAge")}>
-            <PrimaryButton title="Next" />
-          </TouchableOpacity>
-       
+        <TouchableOpacity onPress={() => navigation.navigate("DogAge")}>
+          <PrimaryButton title="Next" />
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );

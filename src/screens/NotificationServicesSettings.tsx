@@ -1,12 +1,18 @@
-
 import { useState } from "react";
-import { View, Text, Pressable, ScrollView, Image, Switch, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Pressable,
+  ScrollView,
+  Image,
+  Switch,
+  TouchableOpacity,
+} from "react-native";
 import colors from "../res/colors";
 import { RootStackScreenProps } from "../common/types";
 export default function NotificationServicesSettings({
   navigation,
 }: RootStackScreenProps<"NotificationServicesSettings">) {
-
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const [isEnabledd, setIsEnabledd] = useState(false);
@@ -26,19 +32,21 @@ export default function NotificationServicesSettings({
           paddingHorizontal: 30,
         }}
       >
-    
-          <TouchableOpacity onPress={() => navigation.navigate("NotificationServicesSettings")}>
-            <Text
-              style={{
-                textAlign: "right",
-                fontSize: 15,
-                fontFamily: "Unbounded",
-              }}
-            >
-              Done
-            </Text>
-          </TouchableOpacity>
-       
+        <TouchableOpacity
+          onPress={() =>
+            navigation.reset({ index: 0, routes: [{ name: "Root" }] })
+          }
+        >
+          <Text
+            style={{
+              textAlign: "right",
+              fontSize: 15,
+              fontFamily: "Unbounded",
+            }}
+          >
+            Done
+          </Text>
+        </TouchableOpacity>
       </View>
       <View
         style={{

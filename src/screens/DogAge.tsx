@@ -12,9 +12,7 @@ import PrimaryButton from "../common/components/PrimaryButton";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import colors from "../res/colors";
 import { RootStackScreenProps } from "../common/types";
-export default function DogAge({
-  navigation,
-}: RootStackScreenProps<"DogAge">) {
+export default function DogAge({ navigation }: RootStackScreenProps<"DogAge">) {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -24,8 +22,8 @@ export default function DogAge({
             fontSize: 20,
             color: colors["brown.900"],
             fontWeight: "600",
-            marginTop: 120,
-            marginRight:0
+            marginTop: 100,
+            marginRight: 0,
           }}
         >
           What is the dog's gender?
@@ -49,21 +47,6 @@ export default function DogAge({
         />
 
         <View style={{ flexDirection: "row", margin: 60 }}>
-          <View
-            style={{
-              width: 130,
-              height: 130,
-              paddingLeft: 45,
-              paddingTop: 30,
-              borderRadius: 15,
-              marginTop: 15,
-              marginHorizontal: 10,
-              borderWidth: 2,
-            }}
-          >
-            <FontAwesome name={"venus"} color={"black"} size={50} />
-          </View>
-
           <View style={{ flexDirection: "row", margin: 30 }}>
             <TouchableOpacity
               style={{
@@ -95,28 +78,13 @@ export default function DogAge({
               <FontAwesome name={"mars"} color={"black"} size={50} />
             </TouchableOpacity>
           </View>
-
-          <View
-            style={{
-              width: 130,
-              height: 130,
-              paddingLeft: 45,
-              paddingTop: 30,
-              borderRadius: 15,
-              marginTop: 15,
-              marginHorizontal: 10,
-              borderWidth: 2,
-            }}
-          >
-            <FontAwesome name={"mars"} color={"black"} size={50} />
-          </View>
         </View>
 
-        
-          <TouchableOpacity  onPress={() => navigation.navigate("Perference")}>
-            <PrimaryButton title="Next" />
-          </TouchableOpacity>
-        
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Perference", { value: "" })}
+        >
+          <PrimaryButton title="Next" />
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );

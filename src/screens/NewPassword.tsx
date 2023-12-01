@@ -1,4 +1,3 @@
-
 import {
   View,
   Text,
@@ -6,6 +5,7 @@ import {
   ScrollView,
   TextInput,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import PrimaryButton from "../common/components/PrimaryButton";
@@ -14,7 +14,6 @@ import { RootStackScreenProps } from "../common/types";
 export default function NewPassword({
   navigation,
 }: RootStackScreenProps<"NewPassword">) {
-
   return (
     <View style={{ flex: 1 }}>
       <ScrollView
@@ -92,14 +91,17 @@ export default function NewPassword({
           </View>
         </View>
         <View style={{ height: 38 }}></View>
-        
-          <Pressable>
-            <PrimaryButton title="Submit" />
-          </Pressable>
-      
+
+        <TouchableOpacity
+          onPress={() =>
+            navigation.reset({ index: 0, routes: [{ name: "Root" }] })
+          }
+        >
+          <PrimaryButton title="Submit" />
+        </TouchableOpacity>
       </ScrollView>
       <Image
-        style={{ alignSelf: "flex-end", position: "absolute",top: 515,}}
+        style={{ alignSelf: "flex-end", position: "absolute", top: 515 }}
         source={require("../res/images/pngs/footprint_rotated.png")}
       />
     </View>

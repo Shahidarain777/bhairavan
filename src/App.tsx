@@ -21,7 +21,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Navigation colorScheme={"light"} />
-      <StatusBar style="light" backgroundColor={"#fff"} />
+      {/* <StatusBar style="light" backgroundColor={"#F7DC9C"} /> */}
     </View>
   );
 }

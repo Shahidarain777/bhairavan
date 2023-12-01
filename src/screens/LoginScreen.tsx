@@ -83,8 +83,10 @@ export default function Login() {
               size={20}
             />
           </View>
-        
-          <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ForgotPassword")}
+          >
             <Text
               style={{
                 textAlign: "right",
@@ -96,10 +98,13 @@ export default function Login() {
               Forgot password?
             </Text>
           </TouchableOpacity>
-         
         </View>
         <View style={{ height: 38 }}></View>
-        <TouchableOpacity onPress={() => navigation.navigate("Root")}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.reset({ index: 0, routes: [{ name: "Root" }] })
+          }
+        >
           <PrimaryButton title="Login" />
         </TouchableOpacity>
         <View

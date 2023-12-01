@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Pressable, ScrollView, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import PrimaryButton from "../common/components/PrimaryButton";
@@ -17,7 +24,7 @@ export default function AddPicture({
             fontSize: 24,
             color: colors["brown.900"],
             fontWeight: "600",
-            marginTop: 110,
+            marginTop: 100,
           }}
         >
           Add Picture
@@ -80,7 +87,6 @@ export default function AddPicture({
         <TouchableOpacity onPress={() => navigation.navigate("AddGender")}>
           <PrimaryButton title="Next" />
         </TouchableOpacity>
-        
       </ScrollView>
     </View>
   );
